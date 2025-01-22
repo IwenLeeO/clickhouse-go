@@ -173,6 +173,28 @@ func (col *Map) AppendRow(v interface{}) error {
 		return nil
 	}
 
+	value = reflect.Indirect(reflect.ValueOf(v))
+	if value.Type() == reflect.TypeOf(map[interface{}]interface{}{}) {
+		var (
+			size int64
+			iter = value.MapRange()
+		)
+		for iter.Next() {
+			size++
+			if err := col.keys.AppendRow(iter.Key().Interface()); err != nil {
+				return err
+			}
+			if err := col.values.AppendRow(iter.Value().Interface()); err != nil {
+				return err
+			}
+		}
+		var prev int64
+		if n := col.offsets.Rows(); n != 0 {
+			prev = col.offsets.col.Row(n - 1)
+		}
+		col.offsets.col.Append(prev + size)
+		return nil
+	}
 	return &ColumnConverterError{
 		Op:   "AppendRow",
 		To:   string(col.chType),
