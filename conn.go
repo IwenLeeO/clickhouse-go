@@ -21,7 +21,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	"github.com/ClickHouse/clickhouse-go/v2/resources"
+	"github.com/IwenLeeO/clickhouse-go/v2/resources"
 	"github.com/pkg/errors"
 	"log"
 	"net"
@@ -30,7 +30,7 @@ import (
 
 	"github.com/ClickHouse/ch-go/compress"
 	chproto "github.com/ClickHouse/ch-go/proto"
-	"github.com/ClickHouse/clickhouse-go/v2/lib/proto"
+	"github.com/IwenLeeO/clickhouse-go/v2/lib/proto"
 )
 
 func dial(ctx context.Context, addr string, num int, opt *Options) (*connect, error) {

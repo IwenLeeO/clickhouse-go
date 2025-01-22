@@ -19,12 +19,12 @@ package tests
 
 import (
 	"context"
-	"github.com/ClickHouse/clickhouse-go/v2/lib/column"
+	"github.com/IwenLeeO/clickhouse-go/v2/lib/column"
 	suuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 	"testing"
 
-	"github.com/ClickHouse/clickhouse-go/v2"
+	"github.com/IwenLeeO/clickhouse-go/v2"
 	"github.com/google/uuid"
 
 	"github.com/stretchr/testify/assert"

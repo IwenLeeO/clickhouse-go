@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ClickHouse/clickhouse-go/v2"
+	"github.com/IwenLeeO/clickhouse-go/v2"
 )
 
 func OpenDb() error {

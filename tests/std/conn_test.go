@@ -22,15 +22,15 @@ import (
 	"crypto/tls"
 	"database/sql"
 	"fmt"
-	clickhouse_tests "github.com/ClickHouse/clickhouse-go/v2/tests"
+	clickhouse_tests "github.com/IwenLeeO/clickhouse-go/v2/tests"
 	"strconv"
 	"testing"
 	"time"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ClickHouse/clickhouse-go/v2"
-	_ "github.com/ClickHouse/clickhouse-go/v2"
+	"github.com/IwenLeeO/clickhouse-go/v2"
+	_ "github.com/IwenLeeO/clickhouse-go/v2"
 	"github.com/stretchr/testify/assert"
 )
 

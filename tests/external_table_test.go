@@ -24,8 +24,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ClickHouse/clickhouse-go/v2"
-	"github.com/ClickHouse/clickhouse-go/v2/ext"
+	"github.com/IwenLeeO/clickhouse-go/v2"
+	"github.com/IwenLeeO/clickhouse-go/v2/ext"
 	"github.com/stretchr/testify/assert"
 )
 

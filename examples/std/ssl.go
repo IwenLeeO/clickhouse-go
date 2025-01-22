@@ -22,7 +22,7 @@ import (
 	"crypto/x509"
 	"database/sql"
 	"fmt"
-	"github.com/ClickHouse/clickhouse-go/v2"
+	"github.com/IwenLeeO/clickhouse-go/v2"
 	"io/ioutil"
 	"os"
 	"path"

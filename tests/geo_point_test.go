@@ -24,7 +24,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ClickHouse/clickhouse-go/v2"
+	"github.com/IwenLeeO/clickhouse-go/v2"
 	"github.com/paulmach/orb"
 	"github.com/stretchr/testify/assert"
 )

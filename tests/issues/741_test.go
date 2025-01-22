@@ -3,9 +3,9 @@ package issues
 import (
 	"context"
 	"fmt"
-	"github.com/ClickHouse/clickhouse-go/v2"
-	clickhouse_tests "github.com/ClickHouse/clickhouse-go/v2/tests"
-	clickhouse_std_tests "github.com/ClickHouse/clickhouse-go/v2/tests/std"
+	"github.com/IwenLeeO/clickhouse-go/v2"
+	clickhouse_tests "github.com/IwenLeeO/clickhouse-go/v2/tests"
+	clickhouse_std_tests "github.com/IwenLeeO/clickhouse-go/v2/tests/std"
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/require"

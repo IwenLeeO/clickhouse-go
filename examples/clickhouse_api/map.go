@@ -19,9 +19,53 @@ package clickhouse_api
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
+	"log"
 	"strconv"
 )
+
+func TestClickHouseInsertMap() error {
+
+	dataSourceName := fmt.Sprintf("tcp://%s?username=%s&password=%s", "10.119.77.162:9000", "ck_default", "yThUtcm4")
+	db, err := sql.Open("clickhouse", dataSourceName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	tx, err := db.Begin()
+
+	z := uint64(1)
+	col1 := map[interface{}]interface{}{
+		"hello": z,
+	}
+
+	x := []interface{}{"hello"}
+	col2 := map[interface{}]interface{}{
+		"hello": x,
+	}
+
+	y := map[string]uint64{
+		"world": 1,
+	}
+	col3 := map[interface{}]interface{}{
+		"hello": y,
+	}
+
+	stmt, err := tx.Prepare(`INSERT INTO log.map_example(Col1, Col2, Col3) VALUES (?, ?, ?)`)
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(col1, col2, col3)
+	if err != nil {
+		return err
+	}
+
+	tx.Commit()
+	log.Println("Data inserted successfully")
+	return nil
+}
 
 func MapInsertRead() error {
 	conn, err := GetNativeConnection(nil, nil, nil)

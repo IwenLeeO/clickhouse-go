@@ -20,8 +20,8 @@ package std
 import (
 	"crypto/tls"
 	"fmt"
-	"github.com/ClickHouse/clickhouse-go/v2"
-	clickhouse_tests "github.com/ClickHouse/clickhouse-go/v2/tests"
+	"github.com/IwenLeeO/clickhouse-go/v2"
+	clickhouse_tests "github.com/IwenLeeO/clickhouse-go/v2/tests"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"strconv"
@@ -130,7 +130,7 @@ func TestStdJson(t *testing.T) {
 	assert.JSONEq(t, ToJson(col1Data.Assignee.Repositories), ToJson(repositories))
 }
 
-//https://github.com/ClickHouse/clickhouse-go/issues/645
+// https://github.com/ClickHouse/clickhouse-go/issues/645
 func TestStdJsonWithMap(t *testing.T) {
 	useSSL, err := strconv.ParseBool(clickhouse_tests.GetEnv("CLICKHOUSE_USE_SSL", "false"))
 	require.NoError(t, err)
