@@ -18,6 +18,7 @@
 package clickhouse_api
 
 import (
+	"context"
 	"fmt"
 	clickhouse_tests "github.com/IwenLeeO/clickhouse-go/v2/tests"
 	"github.com/stretchr/testify/require"
